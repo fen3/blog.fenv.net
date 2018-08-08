@@ -66,48 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-任务管理-day10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/13/任务管理-day10/" class="article-date">
-  <time datetime="2018-04-12T23:07:38.000Z" itemprop="datePublished">2018-04-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/13/任务管理-day10/">任务管理-day10</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>下来把剩下的几个页面也改改<br>views/add.php<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container-fluid"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">style</span>=<span class="string">"margin-top:1rem"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 col-lg-2 col-sm-4"</span>&gt;</span></span><br><span class="line">            欢迎使用。<span class="php"><span class="meta">&lt;?</span>=$_SESSION[<span class="string">'user'</span>]-&gt;cnname;<span class="meta">?&gt;</span></span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-10 col-lg-10 col-sm-8"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-info btn-sm"</span> <span class="attr">href</span>=<span class="string">"&lt;?=site_url('main')?&gt;"</span>&gt;</span>返回首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-default btn-sm"</span> <span class="attr">href</span>=<span class="string">"&lt;?=site_url('login/logout')?&gt;"</span>&gt;</span>登出<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 col-lg-12 col-sm-12"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"&lt;?=site_url('main/save')?&gt;"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"taskcontent"</span>&gt;</span>任务内容<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"taskcontent"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"endtime"</span>&gt;</span>到期时间<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"endtime"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span>            </span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"level"</span>&gt;</span>紧急程度<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"level"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>一般<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>紧急<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>特急<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>views/main.php<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container-fluid"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 col-lg-2 col-sm-4"</span>&gt;</span></span><br><span class="line">                欢迎使用。<span class="php"><span class="meta">&lt;?</span>=$_SESSION[<span class="string">'user'</span>]-&gt;cnname;<span class="meta">?&gt;</span></span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-10 col-lg-10 col-sm-8"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-info btn-sm"</span> <span class="attr">href</span>=<span class="string">"&lt;?=site_url('main/add')?&gt;"</span>&gt;</span>新增<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-default btn-sm"</span> <span class="attr">href</span>=<span class="string">"&lt;?=site_url('login/logout')?&gt;"</span>&gt;</span>登出<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 col-lg-12 col-sm-12"</span>&gt;</span></span><br><span class="line">                <span class="php"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> $pager; <span class="meta">?&gt;</span></span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 col-lg-12 col-sm-12"</span>&gt;</span></span><br><span class="line">            <span class="php"><span class="meta">&lt;?php</span> <span class="keyword">if</span>($query-&gt;num_rows()&gt;<span class="number">0</span>) &#123;<span class="meta">?&gt;</span></span></span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-bordered"</span>&gt;</span><span class="tag">&lt;<span class="name">thead</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>查看<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>级别<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>期限<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>任务<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">thead</span>&gt;</span><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">            <span class="php"><span class="meta">&lt;?php</span> <span class="keyword">foreach</span>($query-&gt;result() <span class="keyword">as</span> $m)&#123;</span></span><br><span class="line"><span class="php">            <span class="meta">?&gt;</span></span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;?=site_url('main/view/'.$m-&gt;id);?&gt;"</span>&gt;</span>查看<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="php"><span class="meta">&lt;?</span>=$m-&gt;level<span class="meta">?&gt;</span></span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="php"><span class="meta">&lt;?</span>=$m-&gt;endtime<span class="meta">?&gt;</span></span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="php"><span class="meta">&lt;?</span>=$m-&gt;content<span class="meta">?&gt;</span></span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="php"><span class="meta">&lt;?php</span> &#125; <span class="meta">?&gt;</span></span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="php"><span class="meta">&lt;?php</span> &#125; <span class="meta">?&gt;</span></span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>views/view.php<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container-fluid"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">style</span>=<span class="string">"margin-top:1rem"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 col-lg-2 col-sm-4"</span>&gt;</span></span><br><span class="line">            欢迎使用。<span class="php"><span class="meta">&lt;?</span>=$_SESSION[<span class="string">'user'</span>]-&gt;cnname;<span class="meta">?&gt;</span></span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-10 col-lg-10 col-sm-8"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-info btn-sm"</span> <span class="attr">href</span>=<span class="string">"&lt;?=site_url('main')?&gt;"</span>&gt;</span>返回首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-default btn-sm"</span> <span class="attr">href</span>=<span class="string">"&lt;?=site_url('login/logout')?&gt;"</span>&gt;</span>登出<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 col-lg-12 col-sm-12"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"&lt;?=site_url('main/update/'.$task-&gt;id)?&gt;"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"taskcontent"</span>&gt;</span>任务内容<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"taskcontent"</span> <span class="attr">value</span>=<span class="string">"&lt;?=$task-&gt;content?&gt;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"endtime"</span>&gt;</span>到期时间<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"endtime"</span> <span class="attr">value</span>=<span class="string">"&lt;?=$task-&gt;endtime?&gt;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span>            </span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"level"</span>&gt;</span>紧急程度<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"level"</span>&gt;</span></span><br><span class="line">                        &lt;option&lt;?php echo $task-&gt;level=='一般'?' selected':'';?&gt;&gt;一般&lt;/option&gt;</span><br><span class="line">                        &lt;option&lt;?php echo $task-&gt;level=='紧急'?' selected':'';?&gt;&gt;紧急&lt;/option&gt;</span><br><span class="line">                        &lt;option&lt;?php echo $task-&gt;level=='特急'?' selected':'';?&gt;&gt;特急&lt;/option&gt;</span><br><span class="line">                    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/13/任务管理-day10/" data-id="cjkl9hvrz001l388mhw95akxj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-任务管理-day09" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/12/任务管理-day09/" class="article-date">
@@ -137,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/12/任务管理-day09/" data-id="cjkl9hvrt001c388m6pe4jqj1" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/12/任务管理-day09/" data-id="cjkl9ljh5001bv88m7cpmmdb1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -181,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/10/任务管理-day08/" data-id="cjkl9hvrq001a388mpi5atg5z" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/10/任务管理-day08/" data-id="cjkl9ljh6001dv88mhamx749v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -223,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/09/任务管理-day07p2/" data-id="cjkl9hvrp0019388mfojrub3v" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/09/任务管理-day07p2/" data-id="cjkl9ljh30019v88mx9zm324u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -266,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/09/任务管理-day07/" data-id="cjkl9hvrn0017388m509cbq4j" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/09/任务管理-day07/" data-id="cjkl9ljh10018v88mz93pzgrt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -308,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/08/任务管理-day06/" data-id="cjkl9hvrm0015388mm8we0jt6" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/08/任务管理-day06/" data-id="cjkl9ljgz0016v88mjkk2i4co" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -348,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/07/看了两天xposed/" data-id="cjkl9hvso002d388mvtcfrq95" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/07/看了两天xposed/" data-id="cjkl9ljhz002dv88m2l7vyayd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bot/">bot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xposed/">xposed</a></li></ul>
@@ -391,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/07/任务管理-day05/" data-id="cjkl9hvrj0012388mpiicmszn" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/07/任务管理-day05/" data-id="cjkl9ljgx0014v88mv4b0j810" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -436,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/06/任务管理-day04/" data-id="cjkl9hvri0010388mrlm8e52d" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/06/任务管理-day04/" data-id="cjkl9ljgv0011v88m4mxk521p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -478,7 +436,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/05/任务管理-day03p2/" data-id="cjkl9hvrh000y388my4bxm2uv" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/05/任务管理-day03p2/" data-id="cjkl9ljgu000zv88motvgodnt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-任务管理-day03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/05/任务管理-day03/" class="article-date">
+  <time datetime="2018-04-05T11:46:25.000Z" itemprop="datePublished">2018-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/05/任务管理-day03/">任务管理-day03</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>登录成功后要保存用户登录信息，可以用SESSION或Cookie。<br>因为经常用到所以再 application/config/autoload.php增加自动加载。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$autoload[<span class="string">'libraries'</span>] = <span class="keyword">array</span>(<span class="string">'database'</span>, <span class="string">'session'</span>);</span><br></pre></td></tr></table></figure>
+<p>application/config/config.php里 默认的file模式，需要设置保存路径。linux里简单的先设置为/tmp<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$config[<span class="string">'sess_save_path'</span>] = <span class="string">'/tmp'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>那么dologin增加保存session的语句,并用redirect转到首页main<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_SESSION[<span class="string">'user'</span>] = $user;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">dologin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    $username = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'username'</span>);</span><br><span class="line">    $password = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'password'</span>);</span><br><span class="line">    <span class="keyword">$this</span>-&gt;load-&gt;model(<span class="string">'user_m'</span>);</span><br><span class="line">    $user = <span class="keyword">$this</span>-&gt;user_m-&gt;get_byusername($username);</span><br><span class="line">    <span class="keyword">if</span>(!is_null($user))&#123;</span><br><span class="line">        <span class="keyword">if</span>(password_verify($password, $user-&gt;password))&#123;</span><br><span class="line">            $_SESSION[<span class="string">'user'</span>] = $user;</span><br><span class="line">            redirect(<span class="string">'main'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'密码错误'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'账号不存在'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>退出时清除SESSION，并跳转到登陆页login<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">logout</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">unset</span>($_SESSION[<span class="string">'user'</span>]);</span><br><span class="line">    redirect(<span class="string">'login'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.fenv.net/2018/04/05/任务管理-day03/" data-id="cjkl9ljgs000xv88mqxitbok5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -545,10 +548,6 @@
           </li>
         
           <li>
-            <a href="/2018/04/24/重装备份和需装软件/">20180424074128</a>
-          </li>
-        
-          <li>
             <a href="/2018/04/20/任务管理-day17/">任务管理-day17</a>
           </li>
         
@@ -558,6 +557,10 @@
         
           <li>
             <a href="/2018/04/18/任务管理-day15/">任务管理-day15</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/17/任务管理-day14/">任务管理-day14</a>
           </li>
         
       </ul>

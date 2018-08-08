@@ -66,51 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-任务管理-day03" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/05/任务管理-day03/" class="article-date">
-  <time datetime="2018-04-05T11:46:25.000Z" itemprop="datePublished">2018-04-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/05/任务管理-day03/">任务管理-day03</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>登录成功后要保存用户登录信息，可以用SESSION或Cookie。<br>因为经常用到所以再 application/config/autoload.php增加自动加载。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$autoload[<span class="string">'libraries'</span>] = <span class="keyword">array</span>(<span class="string">'database'</span>, <span class="string">'session'</span>);</span><br></pre></td></tr></table></figure>
-<p>application/config/config.php里 默认的file模式，需要设置保存路径。linux里简单的先设置为/tmp<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$config[<span class="string">'sess_save_path'</span>] = <span class="string">'/tmp'</span>;</span><br></pre></td></tr></table></figure></p>
-<p>那么dologin增加保存session的语句,并用redirect转到首页main<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_SESSION[<span class="string">'user'</span>] = $user;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">dologin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    $username = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'username'</span>);</span><br><span class="line">    $password = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'password'</span>);</span><br><span class="line">    <span class="keyword">$this</span>-&gt;load-&gt;model(<span class="string">'user_m'</span>);</span><br><span class="line">    $user = <span class="keyword">$this</span>-&gt;user_m-&gt;get_byusername($username);</span><br><span class="line">    <span class="keyword">if</span>(!is_null($user))&#123;</span><br><span class="line">        <span class="keyword">if</span>(password_verify($password, $user-&gt;password))&#123;</span><br><span class="line">            $_SESSION[<span class="string">'user'</span>] = $user;</span><br><span class="line">            redirect(<span class="string">'main'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'密码错误'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'账号不存在'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>退出时清除SESSION，并跳转到登陆页login<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">logout</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">unset</span>($_SESSION[<span class="string">'user'</span>]);</span><br><span class="line">    redirect(<span class="string">'login'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/05/任务管理-day03/" data-id="cjkl9hvrf000w388m12ivupyy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-任务管理-day02p2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/04/任务管理-day02p2/" class="article-date">
@@ -140,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/04/任务管理-day02p2/" data-id="cjkl9hvrc000t388mgvq2x2iu" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/04/任务管理-day02p2/" data-id="cjkl9ljgq000vv88mq1e0yi00" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -183,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/04/任务管理-day02/" data-id="cjkl9hvre000v388mrv2j1zv3" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/04/任务管理-day02/" data-id="cjkl9ljgn000sv88mt5m0hlon" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -242,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/04/03/任务管理-day01/" data-id="cjkl9hvrb000s388mc32cyqbz" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/04/03/任务管理-day01/" data-id="cjkl9ljgp000uv88mqmx7d3ho" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeIgniter/">CodeIgniter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/任务管理/">任务管理</a></li></ul>
@@ -282,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/03/31/新春长跑-20180331/" data-id="cjkl9hvsj0027388m9a1e0dzc" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/03/31/新春长跑-20180331/" data-id="cjkl9ljht0026v88mo7vh145a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/新春长跑/">新春长跑</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跑步/">跑步</a></li></ul>
@@ -322,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/03/29/木棉花开/" data-id="cjkl9hvsl0029388mq355rqxc" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/03/29/木棉花开/" data-id="cjkl9ljhw002bv88mcpr5yco3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/木棉花/">木棉花</a></li></ul>
@@ -362,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/03/29/夜跑-20180328/" data-id="cjkl9hvsa001y388mlgkk0d77" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/03/29/夜跑-20180328/" data-id="cjkl9ljho001zv88mn4zzrqaw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跑步/">跑步</a></li></ul>
@@ -402,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/03/25/骑行东海岸-20180325/" data-id="cjkl9hvvb0082388mrznji2xr" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/03/25/骑行东海岸-20180325/" data-id="cjkl9lji6002lv88mqgvnkytu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/东海岸/">东海岸</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
@@ -441,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/03/25/PhpSpreadsheet生成Excel下载/" data-id="cjkl9hvqh0006388mcnyzszsp" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/03/25/PhpSpreadsheet生成Excel下载/" data-id="cjkl9ljfw0005v88mu6erdqd8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel/">Excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PhpSpreadsheet/">PhpSpreadsheet</a></li></ul>
@@ -481,10 +436,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.fenv.net/2018/03/24/陪娃玩平衡车-20180324/" data-id="cjkl9hvsu002j388m96dkuibg" class="article-share-link">Share</a>
+      <a data-url="https://blog.fenv.net/2018/03/24/陪娃玩平衡车-20180324/" data-id="cjkl9lji3002iv88mhpjm58it" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/娃/">娃</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/平衡车/">平衡车</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/绿地公园/">绿地公园</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面/">面</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-游东海岸和儿童公园" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/24/游东海岸和儿童公园/" class="article-date">
+  <time datetime="2018-03-24T14:31:13.000Z" itemprop="datePublished">2018-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/24/游东海岸和儿童公园/">游东海岸和儿童公园</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天周六天气不错，开车载着爸妈到东海岸小转了一圈。老人家最近几年行动能力不行，已经很久没有出远门了。</p>
+<p>今天算比较远了，怕他们坐车坐太久，就在东海岸停下来一会拍了个照片。去了新津片区后就回来了，回来时走了，楼盘中间的路线。</p>
+<p>回来时看到时间有点早就带他们去了儿童公园。来到儿童公园娃熟悉的到处走。今天爸也看着娃滑滑梯了，看得出很开心。<br><img src="https://i.loli.net/2018/08/08/5b6aff88b3c4f.jpeg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.fenv.net/2018/03/24/游东海岸和儿童公园/" data-id="cjkl9ljhy002cv88mbsack3pa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/东海岸/">东海岸</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/儿童公园/">儿童公园</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/妈/">妈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/娃/">娃</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爸/">爸</a></li></ul>
 
     </footer>
   </div>
@@ -548,10 +545,6 @@
           </li>
         
           <li>
-            <a href="/2018/04/24/重装备份和需装软件/">20180424074128</a>
-          </li>
-        
-          <li>
             <a href="/2018/04/20/任务管理-day17/">任务管理-day17</a>
           </li>
         
@@ -561,6 +554,10 @@
         
           <li>
             <a href="/2018/04/18/任务管理-day15/">任务管理-day15</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/17/任务管理-day14/">任务管理-day14</a>
           </li>
         
       </ul>
